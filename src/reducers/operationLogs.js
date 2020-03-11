@@ -5,7 +5,7 @@ const operationLogs = (state = [], action) => {
     case ADD_OPERATION_LOG:
       const operationLog = {
         description: action.description,
-        operatedAt: action.opetatedAt
+        operatedAt: action.operatedAt
       };
       //新しいstateをlogとして下に貯めていきたいのでスプレット前にoperationLogを入れる。
       return [operationLog, ...state];
