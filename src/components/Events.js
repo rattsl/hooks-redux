@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Event from './Event';
+import AppContext from '../contexts/AppContext';
 
 const Events = ({ state, dispatch }) => {
+  //prop driling問題をcreateContextとuseContextで解消
+  const value = useContext(AppContext);
   return (
     <>
+      <div>{value}</div>
       <h4>イベント一覧</h4>
       <table className="table table-hover">
         <thead>
