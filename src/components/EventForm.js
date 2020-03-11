@@ -55,6 +55,7 @@ const EventForm = () => {
 
   const unCreatable = title === '' || body === '';
   const unDeletable = state.events.length === 0;
+  const unDeletableLogs = state.operationLogs.length === 0;
   return (
     <>
       <h4>イベント作成フォーム</h4>
@@ -92,8 +93,12 @@ const EventForm = () => {
         全てのイベントを削除する
       </button>
       &nbsp;
-      <button className="btn btn-danger" onClick={deleteAllLog}>
-        全てのログを削除
+      <button
+        className="btn btn-danger"
+        onClick={deleteAllLog}
+        disabled={unDeletableLogs}
+      >
+        全ての操作ログを削除
       </button>
     </>
   );
